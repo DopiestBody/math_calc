@@ -1,0 +1,115 @@
+# Создаём класс "Дробь"
+class Fraction:
+
+    # Создаём конструктор класса "Fraction"
+    def __init__(self, num, denum):
+        self.num = num
+        self.denum = denum
+
+
+    def set_num(self,num):
+        self.num = num
+        return self.num
+
+    def set_denum(self,denum):
+        self.denum = denum
+        return self.denum
+
+    def out_info(self):
+        # Выводим дробь
+        print(f"Ваша дробь - {self.num}/{self.denum}")
+
+    def out_num(self):
+        print(self.num)
+
+    def out_denum(self):
+        print(self.denum)
+
+    def sum_fr(self, fract):
+        # проверяем равен ли знаменатель первой дроби знаменателю второй
+        # Выполняем операцию сложения
+        new_num = self.num * fract.denum + fract.num * self.denum
+        new_denum = self.denum * fract.denum
+        if new_denum == new_num:
+            print(1)
+        elif new_num == 0:
+            print(0)
+        else:
+            print(f"Ваша дробь - {new_num}/{new_denum}")
+
+    def sub_fr(self, fract):
+        # проверяем равен ли знаменатель первой дроби знаменателю второй
+        # Выполняем операцию вычитания
+        new_num = self.num * fract.denum - fract.num * self.denum
+        new_denum = self.denum * fract.denum
+        if new_denum == new_num:
+            print(1)
+        elif new_num == 0:
+            print(0)
+        else:
+            print(f"Ваша дробь - {new_num}/{new_denum}")
+
+    def div(self, fract):
+        # Выполняем операцию деления
+        new_num = self.num * fract.denum
+        new_denum = self.denum * fract.num
+        if new_denum == new_num:
+            print(1)
+        elif new_num == 0:
+            print(0)
+        else:
+            print(f"Ваша дробь - {new_num}/{new_denum}")
+
+    def mul(self, fract):
+        # Выполняем операцию умножения
+        new_num = self.num * fract.num
+        new_denum = self.denum * fract.denum
+        if new_denum == new_num:
+            print(1)
+        elif new_num == 0:
+            print(0)
+        else:
+            print(f"Ваша дробь - {new_num}/{new_denum}")
+
+    # def SCM(self):
+    #     while True:
+    #         if self.num % 2 == 0 and self.denum % 2 == 0:
+    #             self.num /= 2
+    #             self.denum /= 2
+    #             break
+
+
+
+
+# Создаём класс для перевода температуры из разных ед. изм-ий
+class Temperature_convert:
+
+    # Создаём метод для перевода Цельсия в Фаренгейт
+    def C_to_F_convert(self, c_degree):
+        f_degree = c_degree * 1.8 + 32
+        return f_degree
+
+    # Создаём метод для перевода Фаренгейта в Цельсий
+    def F_to_C_convert(self, f_degree):
+        c_degree = (f_degree - 32) / 1.8
+        return c_degree
+
+
+class Metric_convertor:
+    def km_to_mil(self, km):
+        mil = km / 1.609344
+        return round(mil,4)
+
+    def mil_to_km(self, mil):
+        km = mil * 1.609344
+        return round(km,4)
+
+    def g_to_l(self,g):
+        return g * 3.78541
+
+    def l_to_g(self,l):
+        l = l * 0.264172
+        return round(l,4)
+
+a = Metric_convertor()
+print(a.l_to_g(20.8194))
